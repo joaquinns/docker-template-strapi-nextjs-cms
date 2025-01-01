@@ -1,0 +1,16 @@
+# Ignorar dependencias locales (serán reinstaladas en el contenedor)
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Ignorar configuraciones locales y archivos temporales
+.env
+*.log
+data/*.db-journal
+.cache
+build
+
+# Ignorar archivos del editor
+.idea
+.vscode
+.DS_Store

@@ -1,0 +1,25 @@
+services:
+  strapi:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules # Esto evita problemas entre dependencias
+      - ./backend/data:/app/data # Persistencia de datos en la db
+    env_file:
+      - ./backend/.env
+
+  nextjs:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules # Evita probemas entre dependencias
+    env_file:
+      - ./frontend/.env
