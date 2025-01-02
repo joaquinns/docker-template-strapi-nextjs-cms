@@ -7,7 +7,7 @@ services:
       - "1337:1337"
     volumes:
       - ./backend:/app
-      - /app/node_modules # Esto evita problemas entre dependencias
+      - /app/node_modules # Esto evita problemas entre dependencias (volumen anonimo)
       - ./backend/data:/app/data # Persistencia de datos en la db
     env_file:
       - ./backend/.env
@@ -20,6 +20,6 @@ services:
       - "3000:3000"
     volumes:
       - ./frontend:/app
-      - /app/node_modules # Evita probemas entre dependencias
+      - /app/node_modules # Evita probemas entre dependencias (volumen anonimo)
     env_file:
       - ./frontend/.env
