@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useCart } from "../context/useCart";
 import { Modal } from "./components/modal";
@@ -71,13 +71,14 @@ export const CartButton = () => {
               key={item.id}
               className="flex items-center justify-between py-4 border-b overflow-y-auto"
             >
-              <Image
+              {/*               <Image
                 width={50}
                 height={50}
                 className="rounded"
                 src="/candeal1.jpg"
                 alt={`Image of the product: ${item.name}`}
-              />
+              /> */}
+              <span>imagen</span>
               <div>
                 <h3 className="font-semibold">{item.name}</h3>
                 <p className="text-sm text-gray-500">
