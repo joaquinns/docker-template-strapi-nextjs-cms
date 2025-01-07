@@ -5,11 +5,13 @@ export const Hero = () => {
     <section className="relative h-[70vh] overflow-hidden">
       <div className="absolute inset-0">
         <Image
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
           fill
           quality={100}
           priority
-          objectFit="cover"
-          objectPosition="center"
           src="/heroflowers.jpg"
           alt="Beautiful flower arrangement"
         />
