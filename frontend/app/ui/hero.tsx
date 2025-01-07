@@ -5,9 +5,9 @@ export const Hero = () => {
     <section className="relative h-[70vh] overflow-hidden">
       <div className="absolute inset-0">
         <Image
+          fill
           quality={100}
           priority
-          layout="fill"
           objectFit="cover"
           objectPosition="center"
           src="/heroflowers.jpg"
