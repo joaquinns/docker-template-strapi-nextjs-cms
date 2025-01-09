@@ -54,7 +54,6 @@ export const Card = ({
       <button
         onClick={(e) => {
           e.preventDefault();
-          console.log("added :D");
         }}
         className="py-2 px-4 bg-[#d79ebc] hover:bg-[#ca79a4] transition-all ease-in-out duration-200 rounded ml-auto font-semibold flex gap-2 justify-center items-center"
       >
