@@ -1,11 +1,18 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const path = usePathname();
+  const isMenPage = path === "/hombres";
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#d494b5]/90  backdrop-filter backdrop-blur-lg shadow-sm shadow-white/40 h-16">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 ${
+        isMenPage ? "bg-blue-800/90" : "bg-[#d494b5]/90"
+      }  backdrop-filter backdrop-blur-lg shadow-sm shadow-white/40 h-16`}
+    >
       <nav className="relative max-w-6xl mx-auto px-4 lg:px-0 h-full">
         <div className="flex justify-between items-center h-full lg:px-4">
           <div>logo</div>
