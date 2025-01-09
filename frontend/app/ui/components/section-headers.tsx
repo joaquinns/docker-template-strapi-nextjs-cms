@@ -6,6 +6,7 @@ interface SectionHeaderProps {
   description?: string;
   align?: "left" | "center" | "right";
   titleSize?: "small" | "medium" | "large";
+  color?: string;
 }
 
 export default function SectionHeader({
@@ -14,6 +15,7 @@ export default function SectionHeader({
   description,
   align = "left",
   titleSize = "medium",
+  color = "text-[#a86e89] ",
 }: SectionHeaderProps) {
   const alignmentClasses = {
     left: "text-left",
@@ -28,10 +30,8 @@ export default function SectionHeader({
   };
 
   return (
-    <div className={`${alignmentClasses[align]}`}>
-      <h2
-        className={`font-bold text-[#a86e89] mb-4 ${titleSizeClasses[titleSize]}`}
-      >
+    <div className={`${alignmentClasses[align]} relative`}>
+      <h2 className={`font-bold mb-4 ${color} ${titleSizeClasses[titleSize]}`}>
         {title}
       </h2>
       {subtitle && (
