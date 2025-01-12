@@ -1,29 +1,50 @@
 "use client";
+import { useCart } from "@/app/context/useCart";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { CartAddIcon } from "../icons/cart-add";
 
 interface CardProps {
+  id?: string;
   title?: string;
   description?: string;
+  imgURL?: string;
+  product: {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    quantity: number;
+  };
 }
 
 export const Card = ({
+  product,
   title = "Titulo de ejemplo",
   description = "Esto es el ejemplo de una descripcion, puneta lambre bicho esto funciona? cabron conte cabron habla claro, brrrrrrr. Menos mal ya terminamos esa mierda de juego",
+  imgURL,
 }: CardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { addToCart } = useCart();
+
+  const notify = (name: string) =>
+    toast.success(`Se ha añadido: ${name} al carrito`, {
+      icon: "✅",
+      className: "font-semibold text-slate-950 text-sm",
+    });
 
   return (
     <article className="relative flex flex-col justify-center items-center text-slate-900 transition-all ease-in-out duration-300 max-w-[400px] mx-auto h-full">
+      <Toaster position="top-center" />
       <Image
         className="rounded"
         height={260}
         width={400}
         alt="card image"
-        src="/heroflowers.jpg"
-        blurDataURL="/heroflowers.jpg"
+        src={imgURL ? imgURL : "/heroflowers.jpg"}
+        blurDataURL={imgURL ? imgURL : "/heroflowers.jpg"}
         loading="lazy"
         style={{ height: "260px", objectFit: "cover" }}
       />
@@ -54,6 +75,8 @@ export const Card = ({
       <button
         onClick={(e) => {
           e.preventDefault();
+          addToCart(product);
+          notify(product.name);
         }}
         className="py-2 px-4 bg-[#d79ebc] hover:bg-[#ca79a4] transition-all ease-in-out duration-200 rounded ml-auto font-semibold flex gap-2 justify-center items-center"
       >
