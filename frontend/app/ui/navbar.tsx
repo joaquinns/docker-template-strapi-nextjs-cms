@@ -42,7 +42,7 @@ export const Navbar = () => {
           </button>
 
           <ul
-            className={`fixed top-16 left-0 right-0 p-4 flex-col w-full h-screen font-bold text-2xl lg:flex lg:gap-4 lg:justify-center lg:items-center lg:font-semibold lg:text-base lg:flex-row lg:relative lg:w-auto lg:h-full lg:top-0 lg:p-0 lg:bg-transparent lg:bg-opacity-100 lg:backdrop-filter-none lg:backdrop-blur-none bg-white bg-opacity-20 backdrop-filter backdrop-blur-xl lg:translate-y-0 transition-transform duration-500 ease-in-out ${
+            className={`fixed top-16 left-0 right-0 p-4 flex-col w-full h-screen font-bold text-2xl lg:flex lg:gap-4 lg:justify-center lg:items-center lg:font-semibold lg:text-base lg:flex-row lg:relative lg:w-auto lg:h-full lg:top-0 lg:p-0 lg:bg-transparent lg:bg-opacity-100 lg:backdrop-filter-none lg:backdrop-blur-none bg-white bg-opacity-100 backdrop-filter backdrop-blur-xl lg:translate-y-0 transition-transform duration-500 ease-in-out text-[#b28194] lg:text-white ${
               isMenuOpen
                 ? "transform translate-y-0"
                 : "transform -translate-y-[calc(100%+64px)]"

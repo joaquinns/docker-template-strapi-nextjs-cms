@@ -2,6 +2,7 @@
 import { useCart } from "@/app/context/useCart";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { CartAddIcon } from "../icons/cart-add";
@@ -28,6 +29,11 @@ export const Card = ({
 }: CardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { addToCart } = useCart();
+  const path = usePathname();
+  const isMenPage = path === "/hombres";
+  const dynamicButtonClasses = isMenPage
+    ? "text-white bg-blue-800/90 hover:bg-blue-600/90"
+    : "bg-[#d79ebc] hover:bg-[#ca79a4] ";
 
   const notify = (name: string) =>
     toast.success(`Se ha añadido: ${name} al carrito`, {
@@ -78,7 +84,7 @@ export const Card = ({
           addToCart(product);
           notify(product.name);
         }}
-        className="py-2 px-4 bg-[#d79ebc] hover:bg-[#ca79a4] transition-all ease-in-out duration-200 rounded ml-auto font-semibold flex gap-2 justify-center items-center"
+        className={`py-2 px-4 ${dynamicButtonClasses} transition-all ease-in-out duration-200 rounded ml-auto font-semibold flex gap-2 justify-center items-center`}
       >
         <CartAddIcon />
         Agregar

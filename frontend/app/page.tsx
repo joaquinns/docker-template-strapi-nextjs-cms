@@ -1,4 +1,5 @@
 import { About } from "./ui/about";
+import Adress from "./ui/adress";
 import { BestSellers } from "./ui/best-sellers";
 import { Delivery } from "./ui/delivery";
 import { Hero } from "./ui/hero";
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <Delivery />
       <PaymentMethods />
+      <Adress />
     </div>
   );
 }
