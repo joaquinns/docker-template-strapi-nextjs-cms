@@ -16,9 +16,9 @@ export default async function Damas({
         <SearchBar />
       </div>
       <SubHero
-        imgURL="/whisky.jpg"
-        altImage="Hero image from caballeros page"
-        title="Regalos para Hombres"
+        imgURL="/damashero.jpg"
+        altImage="Hero image de damas"
+        title="Regalos para Damas"
       />
       <section className="max-w-6xl px-4 xl:px-0 py-8 mx-auto">
         <GridSearchResults query={q} />
