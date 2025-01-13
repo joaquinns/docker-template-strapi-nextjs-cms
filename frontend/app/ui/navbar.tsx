@@ -30,7 +30,7 @@ export const Navbar = () => {
             <p
               className="font-semibold absolute bottom-2 -right-7"
               style={{
-                WebkitTextStroke: `0.03em ${isMenPage ? "#d494b5" : "#291a22"}`,
+                WebkitTextStroke: `0.03em ${isMenPage ? "#d494b5" : "#23151e"}`,
               }}
             >
               gifts
