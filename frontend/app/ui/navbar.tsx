@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -13,13 +14,28 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors ease-in-out duration-300 ${
         isMenPage ? "bg-blue-800/90" : "bg-[#d494b5]/90"
       }  backdrop-filter backdrop-blur-lg shadow-sm shadow-white/40 h-16`}
     >
       <nav className="relative max-w-6xl mx-auto px-4 lg:px-0 h-full">
         <div className="flex justify-between items-center h-full lg:px-4">
-          <div>logo</div>
+          <Link
+            href="/"
+            className="relative flex h-full items-center hover:[&>p:text-md]"
+          >
+            <span className="font-extrabold text-white text-lg relative">
+              Kau
+            </span>
+            <p
+              className="font-semibold absolute bottom-2 -right-7"
+              style={{
+                WebkitTextStroke: `0.03em ${isMenPage ? "#d494b5" : "#291a22"}`,
+              }}
+            >
+              gifts
+            </p>
+          </Link>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -53,19 +69,14 @@ export const Navbar = () => {
             }`}
           >
             <li>
-              <a className="block w-full h-full py-2" href="#">
-                Categorias
-              </a>
+              <Link href="/hombres" className="block w-full h-full py-2">
+                Hombres
+              </Link>
             </li>
             <li>
-              <a className="block w-full h-full py-2" href="#">
-                Categorias
-              </a>
-            </li>
-            <li>
-              <a className="block w-full h-full py-2" href="#">
-                Categorias
-              </a>
+              <Link href="/damas" className="block w-full h-full py-2">
+                Damas
+              </Link>
             </li>
           </ul>
         </div>
