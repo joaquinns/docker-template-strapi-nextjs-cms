@@ -142,12 +142,12 @@ export const GridSearchResults = ({
   useEffect(() => {
     if (query) {
       const queryMapped = query.toLocaleLowerCase();
-      const filtered = PRODUCTS.filter((product) => {
+      const filtered = initialProducts.filter((product) => {
         return product.name.toLocaleLowerCase().includes(queryMapped);
       });
       setFilteredProducts(filtered);
     }
-  }, [query]);
+  }, [initialProducts, query]);
 
   return (
     <div
