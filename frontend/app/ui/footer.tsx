@@ -15,10 +15,10 @@ export const Footer = () => {
             </p>
           </div>
           <div className="flex space-x-4">
-            <a href="#" className="text-[#a86e89] hover:text-[#6ea889]">
+            <a href="#" className="text-[#a86e89] hover:text-[#f54296]">
               <WhatsappIcon />
             </a>
-            <a href="#" className="text-[#a86e89] hover:text-[#6ea889]">
+            <a href="#" className="text-[#a86e89] hover:text-[#f54296]">
               <InstagramIcon />
             </a>
           </div>
