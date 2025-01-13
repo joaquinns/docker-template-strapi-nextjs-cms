@@ -22,7 +22,7 @@ export const SubHero = ({ title, imgURL, altImage }: SubheroProps) => {
           src={imgURL}
           alt={altImage}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+        <div className="absolute inset-0  bg-black/60 " />
       </div>
       <div className="flex items-center justify-center w-full h-full ">
         <SectionHeader title={title} align="center" color="text-slate-100" />
