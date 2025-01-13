@@ -1,6 +1,7 @@
 "use client";
 
 // import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useCart } from "../context/useCart";
 import { Modal } from "./components/modal";
@@ -10,6 +11,8 @@ export const CartButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { cart, removeFromCart, updateQuantity, totalPrice, totalItems } =
     useCart();
+  const path = usePathname();
+  const isMenPage = path === "/hombres";
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -39,7 +42,9 @@ export const CartButton = () => {
   return (
     <>
       <button
-        className={`fixed bottom-8 right-4 xl:right-16 z-50 p-4 bg-slate-100 border-2 border-[#d494b5] rounded-full shadow-sm text-black shadow-white ease-in-out transition-all duration-300 hover:scale-110 ${cssAnimationCart}`}
+        className={`fixed bottom-8 right-4 xl:right-16 z-50 p-4 bg-slate-100 border-2 ${
+          isMenPage ? "border-blue-400" : "border-[#d494b5]"
+        }  rounded-full shadow-sm text-black shadow-white ease-in-out transition-all duration-300 hover:scale-110 ${cssAnimationCart}`}
         onClick={handleToggleModal}
       >
         {totalItems > 0 && (
