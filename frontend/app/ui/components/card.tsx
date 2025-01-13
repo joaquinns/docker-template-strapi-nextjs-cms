@@ -1,7 +1,6 @@
 "use client";
 import { useCart } from "@/app/context/useCart";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
@@ -54,8 +53,8 @@ export const Card = ({
         loading="lazy"
         style={{ height: "260px", objectFit: "cover" }}
       />
-      <Link href="#">
-        <h3 className="p-2 text-xl font-bold hover:underline">{title}</h3>
+      <div>
+        <h3 className="p-2 text-xl font-bold">{title}</h3>
         <div className="px-2 font-semibold">
           <span className="text-lg">$10</span>
         </div>
@@ -77,7 +76,7 @@ export const Card = ({
             {isExpanded ? "Ver menos" : "Ver más"}
           </button>
         </div>
-      </Link>
+      </div>
       <button
         onClick={(e) => {
           e.preventDefault();
